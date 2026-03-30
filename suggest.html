@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Suggestions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h2 id="message"></h2>
+
+  <button onclick="goTo('relax.html')">🎧 Relax</button>
+  <button onclick="goTo('play.html')">🎮 Play</button>
+  <button onclick="goTo('calm.html')">🌿 Calm</button>
+</div>
+
+<script>
+const mood = localStorage.getItem("mood");
+
+document.getElementById("message").innerText =
+  "You seem " + mood + "... let's fix that 💙";
+
+function goTo(page) {
+  window.location.href = page;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moodzy Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+  <h2>Moodzy 💖</h2>
+</div>
+
+<div class="login-box">
+  <h2>Login</h2>
+
+  <input type="text" id="username" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+
+  <button id="loginBtn">Login</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const btn = document.getElementById("loginBtn");
+  const box = document.querySelector(".login-box");
+
+  // 🏃 Button move
+  btn.addEventListener("mouseover", () => {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (!user || !pass) {
+
+      const x = Math.random() * (box.clientWidth - btn.offsetWidth);
+      const y = Math.random() * (box.clientHeight - btn.offsetHeight);
+
+      btn.style.position = "absolute";
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  });
+
+  // ✅ Login click
+  btn.addEventListener("click", () => {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user && pass) {
+      window.location.replace("home.html"); // 🔥 redirect
+    } else {
+      alert("Fill details first 😏");
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
